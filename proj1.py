@@ -1,5 +1,5 @@
 # Your name: Marcela Passos
-# Your student id:
+# Your student id:32478548
 # Your email: marcelap@umich.edu
 # Who or what you worked with on this homework (including generative AI like ChatGPT):
 # If you worked with generative AI also add a statement for how you used it.  
@@ -88,6 +88,9 @@ def layoff_risk_level_group(employees, dict_risk_framework):
     for employee_id, employee_data in employees.items(): #iterate through each employee and each set of data
         hire_year= employee_data['hire_year']
         for risk_level, (min_year, max_year) in dict_risk_framework.items(): 
+            min_year = int(min_year)
+            max_year =int(max_year)
+            hire_year = int(hire_year)
             if min_year <= hire_year <= max_year:
                 result[risk_level][employee_id] = employee_data
                 break
@@ -202,8 +205,15 @@ def csv_writer(data, filename):
 
     Reminder: use encoding='utf-8-sig' when writing the file.
     """
+    with open(filename, mode='w',encoding='utf-8-sig', newline ='')as file:
+        writer = csv.writer(file)
 
-    pass
+        #hard code header
+        writer.writerow(['race_and_gender','amount'])
+
+        for race_gender, count in data.items():
+            writer.writerow([race_gender, count])
+        
 
 
 #EXTRA CREDIT
@@ -456,7 +466,7 @@ def main():
 
 if __name__ == "__main__":
 
-    unittest.main(verbosity=2)
+    #unittest.main(verbosity=2)
 
     main()
 
