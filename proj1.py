@@ -1,9 +1,9 @@
 # Your name: Marcela Passos
 # Your student id:32478548
 # Your email: marcelap@umich.edu
-# Who or what you worked with on this homework (including generative AI like ChatGPT):
+# Who or what you worked with on this homework (including generative AI like ChatGPT): worked with Carolina Janicke and asked chat gpt for help writing test cases and fixing bugs in code
 # If you worked with generative AI also add a statement for how you used it.  
-# e.g.: Carolina 
+# e.g.:
 # Asked Chatgpt hints for debugging and suggesting the general sturcture of the code
 
 import csv
@@ -466,8 +466,7 @@ def main():
 
 if __name__ == "__main__":
 
-    #unittest.main(verbosity=2)
-
+    unittest.main(verbosity=2)
     main()
 
 
